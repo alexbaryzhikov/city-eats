@@ -15,11 +15,10 @@ android {
         versionCode = Versions.VERSION_CODE
         versionName = Versions.VERSION_NAME
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        vectorDrawables.useSupportLibrary = true
-
         setProperty("archivesBaseName", "city-eats-$versionName")
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
 
     buildTypes {
@@ -44,17 +43,26 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.4.1")
-    implementation("com.google.android.material:material:1.5.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.3")
+    implementation(Libs.CORE_KTX)
+    implementation(Libs.APP_STARTUP)
+
+    // UI
+    implementation(Libs.ACTIVITY_KTX)
+    implementation(Libs.APPCOMPAT)
+    implementation(Libs.MATERIAL)
+    implementation(Libs.CONSTRAINT_LAYOUT)
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:${Versions.HILT}")
-    kapt("com.google.dagger:hilt-android-compiler:${Versions.HILT}")
+    implementation(Libs.HILT_ANDROID)
+    kapt(Libs.HILT_COMPILER)
+    androidTestImplementation(Libs.HILT_TESTING)
+    kaptAndroidTest(Libs.HILT_COMPILER)
 
-    // Tests
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    // Instrumentation tests
+    androidTestImplementation(Libs.EXT_JUNIT)
+    androidTestImplementation(Libs.ESPRESSO_CORE)
+
+    // Unit tests
+    testImplementation(Libs.JUNIT)
+    testImplementation(Libs.TRUTH)
 }
