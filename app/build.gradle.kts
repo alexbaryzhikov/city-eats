@@ -43,6 +43,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":common"))
     implementation(project(":venues"))
 
     implementation(Libs.CORE_KTX)
@@ -51,8 +52,9 @@ dependencies {
     // UI
     implementation(Libs.ACTIVITY_KTX)
     implementation(Libs.APPCOMPAT)
-    implementation(Libs.MATERIAL)
     implementation(Libs.CONSTRAINT_LAYOUT)
+    implementation(Libs.FRAGMENT_KTX)
+    implementation(Libs.MATERIAL)
 
     // Hilt
     implementation(Libs.HILT_ANDROID)

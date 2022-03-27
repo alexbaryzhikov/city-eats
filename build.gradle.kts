@@ -16,13 +16,8 @@ buildscript {
 
 subprojects {
     tasks.withType<KotlinCompile>().configureEach {
-        kotlinOptions {
-            jvmTarget = "1.8"
-            freeCompilerArgs = freeCompilerArgs + listOf(
-                "-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi",
-                "-Xopt-in=kotlin.RequiresOptIn"
-            )
-        }
+        kotlinOptions.jvmTarget = "1.8"
+        kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
     }
 }
 

@@ -35,9 +35,14 @@ android {
 }
 
 dependencies {
+    implementation(project(":common"))
+
     implementation(Libs.CORE_KTX)
 
     // UI
+    implementation(Libs.CARDVIEW)
+    implementation(Libs.FRAGMENT_KTX)
+    implementation(Libs.LIFECYCLE_VIEW_MODEL_KTX)
     implementation(Libs.MATERIAL)
 
     // Hilt
