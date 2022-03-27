@@ -36,6 +36,7 @@ dependencies {
     implementation(Libs.CORE_KTX)
 
     // UI
+    implementation(Libs.LIFECYCLE_RUNTIME_KTX)
     implementation(Libs.MATERIAL)
 
     // Unit tests

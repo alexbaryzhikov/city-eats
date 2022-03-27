@@ -6,15 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.RecyclerView
+import com.example.common.util.launchAndRepeatWithViewLifecycle
 import com.example.venues.databinding.VenuesFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class VenuesFragment : Fragment() {
 
     private val venuesViewModel: VenuesViewModel by viewModels()
+
     private lateinit var binding: VenuesFragmentBinding
     private lateinit var venuesRecyclerView: RecyclerView
     private lateinit var venuesAdapter: VenuesAdapter
@@ -41,5 +46,19 @@ class VenuesFragment : Fragment() {
             }
         }
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        launchAndRepeatWithViewLifecycle(Lifecycle.State.STARTED) {
+            launch {
+                venuesViewModel.venuesState.collect(this@VenuesFragment::updateVenues)
+            }
+        }
+    }
+
+    private fun updateVenues(venues: List<VenueState>) {
+        venuesAdapter.submitList(venues)
     }
 }
