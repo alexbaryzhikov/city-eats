@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.kapt")
     id("dagger.hilt.android.plugin")
@@ -9,25 +9,17 @@ android {
     compileSdk = Versions.COMPILE_SDK
 
     defaultConfig {
-        applicationId = "com.example.cityeats"
         minSdk = Versions.MIN_SDK
         targetSdk = Versions.TARGET_SDK
-        versionCode = Versions.VERSION_CODE
-        versionName = Versions.VERSION_NAME
-
-        setProperty("archivesBaseName", "city-eats-$versionName")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
-        getByName("debug") {
-            versionNameSuffix = "-debug"
-        }
-        getByName("release") {
+        release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
 
@@ -43,28 +35,19 @@ android {
 }
 
 dependencies {
-    implementation(project(":venues"))
-
     implementation(Libs.CORE_KTX)
-    implementation(Libs.APP_STARTUP)
 
     // UI
-    implementation(Libs.ACTIVITY_KTX)
-    implementation(Libs.APPCOMPAT)
     implementation(Libs.MATERIAL)
-    implementation(Libs.CONSTRAINT_LAYOUT)
 
     // Hilt
     implementation(Libs.HILT_ANDROID)
     kapt(Libs.HILT_COMPILER)
-    androidTestImplementation(Libs.HILT_TESTING)
-    kaptAndroidTest(Libs.HILT_COMPILER)
+
+    // Unit tests
+    testImplementation(Libs.JUNIT)
 
     // Instrumentation tests
     androidTestImplementation(Libs.EXT_JUNIT)
     androidTestImplementation(Libs.ESPRESSO_CORE)
-
-    // Unit tests
-    testImplementation(Libs.JUNIT)
-    testImplementation(Libs.TRUTH)
 }

@@ -13,4 +13,10 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "CityEats"
-include(":app")
+include(
+    ":app",
+    ":location",
+    ":location-impl",
+    ":venues",
+    ":venues-impl",
+)
