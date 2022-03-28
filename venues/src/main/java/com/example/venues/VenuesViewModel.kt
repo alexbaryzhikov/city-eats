@@ -2,24 +2,24 @@ package com.example.venues
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.common.location.LocationProvider
 import com.example.common.util.WhileViewSubscribed
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
 @HiltViewModel
-class VenuesViewModel @Inject constructor() : ViewModel() {
+class VenuesViewModel @Inject constructor(
+    locationProvider: LocationProvider
+) : ViewModel() {
 
-    val venuesState: StateFlow<List<VenueState>> = flow {
-        while (true) {
+    val venuesState: StateFlow<List<VenueState>> = locationProvider.locations
+        .mapLatest {
             data.shuffle()
-            emit(data.toList())
-            delay(10000)
-        }
-    }.stateIn(viewModelScope, WhileViewSubscribed, emptyList())
+            data.toList()
+        }.stateIn(viewModelScope, WhileViewSubscribed, emptyList())
 
     companion object {
         private val data: MutableList<VenueState> = mutableListOf(

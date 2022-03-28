@@ -16,8 +16,7 @@ rootProject.name = "CityEats"
 include(
     ":app",
     ":common",
-    ":location",
-    ":location-impl",
+    ":common-impl",
     ":venues",
     ":venues-impl",
 )

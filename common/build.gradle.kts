@@ -1,6 +1,8 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -38,6 +40,10 @@ dependencies {
     // UI
     implementation(Libs.LIFECYCLE_RUNTIME_KTX)
     implementation(Libs.MATERIAL)
+
+    // Hilt
+    implementation(Libs.HILT_ANDROID)
+    kapt(Libs.HILT_COMPILER)
 
     // Unit tests
     testImplementation(Libs.JUNIT)

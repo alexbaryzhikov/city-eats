@@ -44,6 +44,7 @@ android {
 
 dependencies {
     implementation(project(":common"))
+    implementation(project(":common-impl"))
     implementation(project(":venues"))
 
     implementation(Libs.CORE_KTX)

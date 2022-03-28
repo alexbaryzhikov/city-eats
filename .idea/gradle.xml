@@ -13,8 +13,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/common" />
-            <option value="$PROJECT_DIR$/location" />
-            <option value="$PROJECT_DIR$/location-impl" />
+            <option value="$PROJECT_DIR$/common-impl" />
             <option value="$PROJECT_DIR$/venues" />
             <option value="$PROJECT_DIR$/venues-impl" />
           </set>
