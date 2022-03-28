@@ -46,6 +46,7 @@ dependencies {
     implementation(project(":common"))
     implementation(project(":common-impl"))
     implementation(project(":venues"))
+    implementation(project(":venues-impl"))
 
     implementation(Libs.CORE_KTX)
     implementation(Libs.APP_STARTUP)
