@@ -34,7 +34,7 @@ class VenuesFragment : Fragment() {
             viewModel = venuesViewModel
         }
         venuesRecyclerView = binding.venuesRecyclerView
-        venuesAdapter = VenuesAdapter(viewLifecycleOwner)
+        venuesAdapter = VenuesAdapter(viewLifecycleOwner, venuesViewModel)
         venuesRecyclerView.apply {
             adapter = venuesAdapter
             (itemAnimator as DefaultItemAnimator).run {

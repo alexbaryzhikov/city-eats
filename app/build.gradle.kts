@@ -69,6 +69,9 @@ dependencies {
     // OkHttp
     implementation(Libs.OKHTTP_LOGGING_INTERCEPTOR)
 
+    // Data Store
+    implementation(Libs.DATA_STORE_PREFERENCES)
+
     // Hilt
     implementation(Libs.HILT_ANDROID)
     kapt(Libs.HILT_COMPILER)

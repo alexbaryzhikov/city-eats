@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.venues.databinding.VenueItemBinding
 
 class VenuesAdapter(
-    private val lifecycleOwner: LifecycleOwner
+    private val lifecycleOwner: LifecycleOwner,
+    private val viewModel: VenuesViewModel
 ) : ListAdapter<Venue, VenueViewHolder>(VenueDiff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VenueViewHolder {
@@ -21,6 +22,7 @@ class VenuesAdapter(
 
     override fun onBindViewHolder(holder: VenueViewHolder, position: Int) {
         holder.binding.venue = getItem(position)
+        holder.binding.viewModel = viewModel
         holder.binding.executePendingBindings()
     }
 }

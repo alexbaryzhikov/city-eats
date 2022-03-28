@@ -19,5 +19,9 @@
         <!-- Surface and background. -->
         <item name="colorSurface">@color/grey_800</item>
         <item name="backgroundColor">@color/grey_700</item>
+
+        <!-- Icons -->
+        <item name="colorIcon">@color/grey_200</item>
+        <item name="colorIconDisabled">@color/grey_600</item>
     </style>
 </resources>

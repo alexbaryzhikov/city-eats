@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="venues/src/main/res/drawable/ic_favorite_empty.xml" value="0.28" />
+        <entry key="venues/src/main/res/drawable/ic_favorite_filled.xml" value="0.28" />
         <entry key="venues/src/main/res/drawable/ic_local_cafe.xml" value="0.28" />
         <entry key="venues/src/main/res/layout/venue_item.xml" value="0.4685185185185185" />
         <entry key="venues/src/main/res/layout/venues_fragment.xml" value="0.5" />
