@@ -1,4 +1,4 @@
-package com.example.venues_impl
+package com.example.venues_impl.api
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

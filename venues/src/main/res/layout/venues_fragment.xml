@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.venues.VenuesViewModel" />
+            type="com.example.venues.ui.VenuesViewModel" />
     </data>
 
     <FrameLayout

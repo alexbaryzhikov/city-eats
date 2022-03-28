@@ -4,7 +4,9 @@ import android.util.Log
 import com.example.common.location.GeoPoint
 import com.example.common.util.Result
 import com.example.venues.VenuesInteractor
-import com.example.venues.VenuesState
+import com.example.venues.model.VenuesState
+import com.example.venues_impl.api.RestaurantsNetworkDataSource
+import com.example.venues_impl.data.VenuesDataStorage
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject
 

@@ -1,4 +1,4 @@
-package com.example.venues_impl
+package com.example.venues_impl.data
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -23,6 +23,6 @@ class VenuesDataStorage @Inject constructor(
     companion object {
         const val PREFS_NAME = "city_eats.venues"
 
-        val FAVORITE_IDS_KEY = stringSetPreferencesKey("favorite_ids")
+        private val FAVORITE_IDS_KEY = stringSetPreferencesKey("favorite_ids")
     }
 }

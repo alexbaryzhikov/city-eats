@@ -9,11 +9,11 @@
 
         <variable
             name="venue"
-            type="com.example.venues.Venue" />
+            type="com.example.venues.model.Venue" />
 
         <variable
             name="viewModel"
-            type="com.example.venues.VenuesViewModel" />
+            type="com.example.venues.ui.VenuesViewModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

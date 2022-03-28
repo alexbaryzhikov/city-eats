@@ -7,9 +7,9 @@ import androidx.datastore.preferences.preferencesDataStore
 import com.example.common.di.ForRestaurantsApi
 import com.example.common.di.SafeHttpClient
 import com.example.venues.VenuesInteractor
-import com.example.venues_impl.RestaurantsApi
-import com.example.venues_impl.VenuesDataStorage
 import com.example.venues_impl.VenuesInteractorImpl
+import com.example.venues_impl.api.RestaurantsApi
+import com.example.venues_impl.data.VenuesDataStorage
 import com.squareup.moshi.Moshi
 import dagger.Binds
 import dagger.Module

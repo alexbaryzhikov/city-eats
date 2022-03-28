@@ -1,7 +1,7 @@
 package com.example.cityeats
 
-import com.example.venues.Venue
-import com.example.venues.VenuesState
+import com.example.venues.model.Venue
+import com.example.venues.model.VenuesState
 
 object VenuesTestData {
     val venuesState: VenuesState = VenuesState(

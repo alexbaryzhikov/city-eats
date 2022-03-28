@@ -1,4 +1,4 @@
-package com.example.venues
+package com.example.venues.model
 
 data class VenuesState(
     val items: List<Venue> = emptyList()

@@ -1,10 +1,13 @@
-package com.example.venues
+package com.example.venues.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.common.location.LocationProvider
 import com.example.common.util.Result
 import com.example.common.util.WhileViewSubscribed
+import com.example.venues.VenuesInteractor
+import com.example.venues.model.Venue
+import com.example.venues.model.VenuesState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch

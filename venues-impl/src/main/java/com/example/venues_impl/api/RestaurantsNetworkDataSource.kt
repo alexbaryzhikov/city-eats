@@ -1,7 +1,7 @@
-package com.example.venues_impl
+package com.example.venues_impl.api
 
-import com.example.venues.Venue
-import com.example.venues.VenuesState
+import com.example.venues.model.Venue
+import com.example.venues.model.VenuesState
 import javax.inject.Inject
 
 class RestaurantsNetworkDataSource @Inject constructor(

@@ -1,4 +1,4 @@
-package com.example.venues
+package com.example.venues.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.RecyclerView
 import com.example.common.util.launchAndRepeatWithViewLifecycle
 import com.example.venues.databinding.VenuesFragmentBinding
+import com.example.venues.model.VenuesState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch

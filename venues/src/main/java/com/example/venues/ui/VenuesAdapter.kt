@@ -1,4 +1,4 @@
-package com.example.venues
+package com.example.venues.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.venues.databinding.VenueItemBinding
+import com.example.venues.model.Venue
 
 class VenuesAdapter(
     private val lifecycleOwner: LifecycleOwner,
