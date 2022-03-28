@@ -9,15 +9,17 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
+private const val MAX_ITEMS = 15
+
 @HiltViewModel
 class VenuesViewModel @Inject constructor(
     locationProvider: LocationProvider,
     private val venuesInteractor: VenuesInteractor
 ) : ViewModel() {
 
-    val venuesState: StateFlow<List<VenueState>> = locationProvider.locations
+    val venuesState: StateFlow<VenuesState> = locationProvider.locations
         .mapLatest { venuesInteractor.fetchVenues(it) }
-        .filterIsInstance<Result.Success<List<VenueState>>>()
-        .map { it.data }
-        .stateIn(viewModelScope, WhileViewSubscribed, emptyList())
+        .filterIsInstance<Result.Success<VenuesState>>()
+        .map { it.data.copy(items = it.data.items.take(MAX_ITEMS)) }
+        .stateIn(viewModelScope, WhileViewSubscribed, VenuesState())
 }

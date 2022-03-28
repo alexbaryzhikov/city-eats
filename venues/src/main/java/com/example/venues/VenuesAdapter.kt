@@ -10,7 +10,7 @@ import com.example.venues.databinding.VenueItemBinding
 
 class VenuesAdapter(
     private val lifecycleOwner: LifecycleOwner
-) : ListAdapter<VenueState, VenueViewHolder>(VenueDiff) {
+) : ListAdapter<Venue, VenueViewHolder>(VenueDiff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VenueViewHolder {
         val binding = VenueItemBinding
@@ -29,12 +29,12 @@ class VenueViewHolder(
     val binding: VenueItemBinding
 ) : RecyclerView.ViewHolder(binding.root)
 
-object VenueDiff : DiffUtil.ItemCallback<VenueState>() {
-    override fun areItemsTheSame(oldItem: VenueState, newItem: VenueState): Boolean {
-        return oldItem.title == newItem.title
+object VenueDiff : DiffUtil.ItemCallback<Venue>() {
+    override fun areItemsTheSame(oldItem: Venue, newItem: Venue): Boolean {
+        return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: VenueState, newItem: VenueState): Boolean {
+    override fun areContentsTheSame(oldItem: Venue, newItem: Venue): Boolean {
         return oldItem == newItem
     }
 }

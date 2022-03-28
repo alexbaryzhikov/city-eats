@@ -58,7 +58,7 @@ class VenuesFragment : Fragment() {
         }
     }
 
-    private fun updateVenues(venues: List<VenueState>) {
-        venuesAdapter.submitList(venues)
+    private fun updateVenues(venues: VenuesState) {
+        venuesAdapter.submitList(venues.items)
     }
 }

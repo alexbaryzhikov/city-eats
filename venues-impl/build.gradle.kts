@@ -38,10 +38,16 @@ dependencies {
     implementation(project(":common"))
     implementation(project(":venues"))
 
-    implementation(Libs.CORE_KTX)
+    // Moshi
+    implementation(Libs.MOSHI)
+    kapt(Libs.MOSHI_CODEGEN)
 
-    // UI
-    implementation(Libs.MATERIAL)
+    // Retrofit
+    implementation(Libs.RETROFIT)
+    implementation(Libs.RETROFIT_CONVERTER_MOSHI)
+
+    // Data Store
+    implementation(Libs.DATA_STORE_PREFERENCES)
 
     // Hilt
     implementation(Libs.HILT_ANDROID)

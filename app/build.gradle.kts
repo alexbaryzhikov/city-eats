@@ -58,6 +58,17 @@ dependencies {
     implementation(Libs.FRAGMENT_KTX)
     implementation(Libs.MATERIAL)
 
+    // Moshi
+    implementation(Libs.MOSHI)
+    kapt(Libs.MOSHI_CODEGEN)
+
+    // Retrofit
+    implementation(Libs.RETROFIT)
+    implementation(Libs.RETROFIT_CONVERTER_MOSHI)
+
+    // OkHttp
+    implementation(Libs.OKHTTP_LOGGING_INTERCEPTOR)
+
     // Hilt
     implementation(Libs.HILT_ANDROID)
     kapt(Libs.HILT_COMPILER)
