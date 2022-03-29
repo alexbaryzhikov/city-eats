@@ -1,6 +1,5 @@
 package com.example.venues_impl
 
-import android.util.Log
 import com.example.common.location.GeoPoint
 import com.example.common.util.Result
 import com.example.venues.VenuesInteractor
@@ -8,6 +7,7 @@ import com.example.venues.model.VenuesState
 import com.example.venues_impl.api.RestaurantsNetworkDataSource
 import com.example.venues_impl.data.VenuesDataStorage
 import kotlinx.coroutines.flow.first
+import timber.log.Timber
 import javax.inject.Inject
 
 class VenuesInteractorImpl @Inject constructor(
@@ -20,7 +20,7 @@ class VenuesInteractorImpl @Inject constructor(
             .fold(
                 onSuccess = { Result.Success(it) },
                 onFailure = {
-                    Log.e("VenuesInteractorImpl", "Venues data fetch failure", it)
+                    Timber.w(it, "Venues data fetch failure")
                     Result.Failure(it)
                 }
             )
