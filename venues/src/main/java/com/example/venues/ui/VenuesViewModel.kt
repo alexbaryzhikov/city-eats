@@ -27,6 +27,15 @@ class VenuesViewModel @Inject constructor(
         .map { it.data.copy(items = it.data.items.take(MAX_ITEMS)) }
         .stateIn(viewModelScope, WhileViewSubscribed, VenuesState())
 
+    private val _loading: MutableStateFlow<Boolean> = MutableStateFlow(true)
+    val loading: StateFlow<Boolean> = _loading
+
+    init {
+        venuesState.takeWhile { it.items.isEmpty() }
+            .onCompletion { _loading.value = false }
+            .launchIn(viewModelScope)
+    }
+
     private val _favoriteIds: MutableStateFlow<Set<String>> = MutableStateFlow(emptySet())
     val favoriteIds: StateFlow<Set<String>> = _favoriteIds
 

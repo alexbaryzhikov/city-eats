@@ -5,10 +5,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.example.venues.ui.VenuesViewModel" />
+    </data>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?attr/backgroundColor">
+
+        <ImageView
+            android:id="@+id/compass_image_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_explore"
+            android:visibility="@{viewModel.loading ? View.VISIBLE : View.GONE}"
+            tools:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/venues_recycler_view"
@@ -22,6 +42,7 @@
             android:paddingBottom="16dp"
             android:scrollbarStyle="outsideOverlay"
             android:scrollbars="vertical"
+            android:visibility="@{viewModel.loading ? View.GONE : View.VISIBLE}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/venue_item" />
 
