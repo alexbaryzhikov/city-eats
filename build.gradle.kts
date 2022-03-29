@@ -23,3 +23,17 @@ subprojects {
 task<Delete>("clean") {
     delete(rootProject.buildDir)
 }
+
+task("runUnitTests") {
+    dependsOn("common:testDebugUnitTest")
+    dependsOn("common-impl:testDebugUnitTest")
+    dependsOn("venues:testDebugUnitTest")
+    dependsOn("venues-impl:testDebugUnitTest")
+}
+
+task("runAndroidTests") {
+    dependsOn("common:connectedDebugAndroidTest")
+    dependsOn("common-impl:connectedDebugAndroidTest")
+    dependsOn("venues:connectedDebugAndroidTest")
+    dependsOn("venues-impl:connectedDebugAndroidTest")
+}
