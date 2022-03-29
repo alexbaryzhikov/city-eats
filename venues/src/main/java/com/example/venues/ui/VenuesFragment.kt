@@ -9,15 +9,20 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.RecyclerView
+import com.example.common.imageloader.ImageLoader
 import com.example.common.util.launchAndRepeatWithViewLifecycle
 import com.example.venues.databinding.VenuesFragmentBinding
 import com.example.venues.model.VenuesState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class VenuesFragment : Fragment() {
+
+    @Inject
+    lateinit var imageLoader: ImageLoader
 
     private val venuesViewModel: VenuesViewModel by viewModels()
 
@@ -30,12 +35,9 @@ class VenuesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = VenuesFragmentBinding.inflate(inflater, container, false).apply {
-            lifecycleOwner = viewLifecycleOwner
-            viewModel = venuesViewModel
-        }
+        binding = VenuesFragmentBinding.inflate(inflater, container, false)
         venuesRecyclerView = binding.venuesRecyclerView
-        venuesAdapter = VenuesAdapter(viewLifecycleOwner, venuesViewModel)
+        venuesAdapter = VenuesAdapter(this, venuesViewModel, imageLoader)
         venuesRecyclerView.apply {
             adapter = venuesAdapter
             (itemAnimator as DefaultItemAnimator).run {

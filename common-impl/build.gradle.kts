@@ -42,6 +42,10 @@ dependencies {
     // UI
     implementation(Libs.MATERIAL)
 
+    // Glide
+    implementation(Libs.GLIDE)
+    kapt(Libs.GLIDE_COMPILER)
+
     // Hilt
     implementation(Libs.HILT_ANDROID)
     kapt(Libs.HILT_COMPILER)
