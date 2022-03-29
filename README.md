@@ -20,24 +20,31 @@ and all Gradle build scripts are written with the **Kotlin DSL**.
 ## Architecture
 
 The architecture is built around **Android Architecture Components**. Logic is
-kept away from Activity and Fragment and moved to **ViewModel**. Data is observed
-using **Kotlin Flows** and the **Data Binding Library** binds UI components in layout
-to the app's data sources.
+kept away from UI components and moved to **ViewModel**. Data is observed
+using **Kotlin Flows** and the **Data Binding Library**.
 
-The **Data layer** handles data operations. User location data comes from a fake
-location provider, venues data is stored remotely and is fetched and stored in memory,
-and user preferences are stored in **DataStore**. Repository components are responsible
-for handling all data operations and abstracting the data sources from the rest of the app. 
-
-A **Domain layer** sits between the data layer and the presentation layer, and handles
-discrete pieces of business logic off the UI thread.
-
-The **Navigation component** is used to implement navigation in the app, handling Fragment
-transactions and providing a consistent user experience.
-
-UI tests are written with **Espresso** and unit tests use **Junit4** with **Mockito**.
-
-The **Jetpack Benchmark library** is used to benchmark code from within Android Studio.
-This enables us to automate measuring and monitoring initial startup time.
+User location data comes from a fake location provider, venues data is fetched from
+backend and stored in memory, and user preferences are stored in **DataStore**.
+Repository components are responsible for handling all data operations and abstracting
+the data sources from the rest of the app. 
 
 **Dependency Injection** is implemented with **Hilt**.
+
+## Roadmap
+
+City Eats app is a work in progress, and the following non-feature requirements are due
+to be implemented before it is ready for publishing:
+
+- navigation (e.g. **Navigation Component**)
+- warning/error log aggregation (e.g. **Firebase Crashlytics**)
+- analytics events aggregation
+- UI tests and unit tests
+- launcher icon
+- certificate and signing config
+
+It's also good to have early:
+
+- automated code style check (e.g. **Spotless**)
+- performance tests
+- theme and design components 
+- accessibility labels for UI elements
