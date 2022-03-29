@@ -37,11 +37,6 @@ android {
 dependencies {
     implementation(project(":common"))
 
-    implementation(Libs.CORE_KTX)
-
-    // UI
-    implementation(Libs.MATERIAL)
-
     // Glide
     implementation(Libs.GLIDE)
     kapt(Libs.GLIDE_COMPILER)

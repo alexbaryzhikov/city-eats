@@ -38,8 +38,6 @@ dependencies {
     implementation(project(":common"))
     implementation(project(":venues"))
 
-    implementation(Libs.CORE_KTX)
-
     // Moshi
     implementation(Libs.MOSHI)
     kapt(Libs.MOSHI_CODEGEN)

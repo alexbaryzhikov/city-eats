@@ -55,7 +55,6 @@ dependencies {
     implementation(Libs.ACTIVITY_KTX)
     implementation(Libs.APPCOMPAT)
     implementation(Libs.FRAGMENT_KTX)
-    implementation(Libs.MATERIAL)
 
     // Moshi
     implementation(Libs.MOSHI)

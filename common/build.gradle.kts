@@ -35,13 +35,15 @@ android {
 }
 
 dependencies {
+    api(Libs.CORE_KTX)
+    api(Libs.COROUTINES)
+    api(Libs.COROUTINES_ANDROID)
+    api(Libs.KOTLIN_STDLIB)
     api(Libs.TIMBER)
 
-    implementation(Libs.CORE_KTX)
-
     // UI
+    api(Libs.MATERIAL)
     implementation(Libs.LIFECYCLE_RUNTIME_KTX)
-    implementation(Libs.MATERIAL)
 
     // Hilt
     implementation(Libs.HILT_ANDROID)
