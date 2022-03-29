@@ -54,7 +54,6 @@ dependencies {
     // UI
     implementation(Libs.ACTIVITY_KTX)
     implementation(Libs.APPCOMPAT)
-    implementation(Libs.CONSTRAINT_LAYOUT)
     implementation(Libs.FRAGMENT_KTX)
     implementation(Libs.MATERIAL)
 
@@ -75,14 +74,4 @@ dependencies {
     // Hilt
     implementation(Libs.HILT_ANDROID)
     kapt(Libs.HILT_COMPILER)
-    androidTestImplementation(Libs.HILT_TESTING)
-    kaptAndroidTest(Libs.HILT_COMPILER)
-
-    // Instrumentation tests
-    androidTestImplementation(Libs.EXT_JUNIT)
-    androidTestImplementation(Libs.ESPRESSO_CORE)
-
-    // Unit tests
-    testImplementation(Libs.JUNIT)
-    testImplementation(Libs.TRUTH)
 }

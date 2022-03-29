@@ -35,7 +35,6 @@ android {
 }
 
 dependencies {
-    // Timber
     api(Libs.TIMBER)
 
     implementation(Libs.CORE_KTX)
